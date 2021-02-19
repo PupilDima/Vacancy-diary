@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="dimakovalenko">
+        <createTable tableName="users">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"></constraints>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="dimakovalenko">
+        <createTable tableName="vacancies">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"></constraints>
+            </column>
+            <column name="expected_salary" type="INT">
+                <constraints nullable="true"></constraints>
+            </column>
+            <column name="company_name" type="TEXT">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="position" type="TEXT">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="vacancy_link" type="TEXT">
+                <constraints nullable="true"></constraints>
+            </column>
+            <column name="recruiter_email" type="VARCHAR(255)">
+                <constraints nullable="true"></constraints>
+            </column>
+            <column name="recruiter_phone" type="VARCHAR(255)">
+                <constraints nullable="true"></constraints>
+            </column>
+            <column name="status"
+                    type="ENUM('GIVE_IN', 'GAVE_TEST', 'WAITING_FEEDBACK', 'SCREENING', 'TECHNICAL_INTERVIEW', 'OFFER',
+                            'REFUSAL', 'NO_ANSWER')">
+                <constraints nullable="true"></constraints>
+            </column>
+            <column name="last_status_change" type="DATETIME">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="dimakovalenko">
+        <createTable tableName="vacancies_users">
+            <column name="vacancy_id" type="INT">
+                <constraints foreignKeyName="fk_vuvacancy_id" references="vacancies(id)" nullable="false"></constraints>
+            </column>
+            <column name="user_id" type="INT">
+                <constraints foreignKeyName="fk_vuuser_id" references="users(id)" nullable="false"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

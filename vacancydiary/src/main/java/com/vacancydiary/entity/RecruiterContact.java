@@ -7,10 +7,10 @@ import java.io.Serializable;
 @Embeddable
 public class RecruiterContact implements Serializable {
 
-    @Column(name = "recruter_email")
+    @Column(name = "recruiter_email")
     private String email;
 
-    @Column(name = "recruter_phone")
+    @Column(name = "recruiter_phone")
     private String phone;
 
     public RecruiterContact() {

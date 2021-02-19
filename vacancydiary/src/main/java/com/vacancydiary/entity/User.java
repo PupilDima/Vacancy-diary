@@ -21,8 +21,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
-    @Column(name = "login")
-    private String login;
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "password")
     private String password;
@@ -35,9 +35,9 @@ public class User {
     public User() {
     }
 
-    public User(Integer id, String login, String password, List<Vacancy> vacancies) {
+    public User(Integer id, String email, String password, List<Vacancy> vacancies) {
         this.id = id;
-        this.login = login;
+        this.email = email;
         this.password = password;
         this.vacancies = vacancies;
     }
@@ -50,12 +50,12 @@ public class User {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setEmail(String login) {
+        this.email = login;
     }
 
     public String getPassword() {
@@ -85,13 +85,13 @@ public class User {
         User user = (User) o;
 
         return Objects.equals(id, user.id) &&
-                Objects.equals(login, user.login) &&
+                Objects.equals(email, user.email) &&
                 Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, login, password);
+        return Objects.hash(id, email, password);
     }
 
     @Override
