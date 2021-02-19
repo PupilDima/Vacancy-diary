@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+   <changeSet id="1" author="dimakovalenko">
+       <insert tableName="users">
+           <column name="email" value="email1@mail.com"></column>
+           <column name="password" value="$2a$12$kpc.Mu6wvhZQPBWMj7CpN./mw1BPwWyDGWAlZX4qOnQTBoV9.8ste"></column>
+       </insert>
+       <insert tableName="users">
+           <column name="email" value="email2@mail.com"></column>
+           <column name="password" value="$2a$12$3EaTBOFTAmQZcrOGeh88yeaHnidfK0U/pVAljGWvUfSI4/D17Ae56"></column>
+       </insert>
+       <insert tableName="users">
+           <column name="email" value="email3@mail.com"></column>
+           <column name="password" value="$2a$12$3vFG8SkVJkjJGp7U4Dlu/.yOB9ElfCFYkgeNJzFo97.ibyeN4D.qK"></column>
+       </insert>
+       <insert tableName="users">
+           <column name="email" value="email4@mail.com"></column>
+           <column name="password" value="$2a$12$ZaQpeHpFEwAYdEqfKvZ.l.6vJm.TIRMhJW8s4UdLmg0Srtr/.r4yK"></column>
+       </insert>
+   </changeSet>
+
+    <changeSet id="2" author="dimakovalenko">
+        <insert tableName="vacancies">
+            <column name="expected_salary" value="1382"></column>
+            <column name="company_name" value="solq"></column>
+            <column name="position" value="Delivery driver"></column>
+            <column name="vacancy_link" value="www.solq.com"></column>
+            <column name="recruiter_email" value="email1hr@mail.com"></column>
+            <column name="recruiter_phone" value="856-785-2018"></column>
+            <column name="status" value="GIVE_IN"></column>
+            <column name="last_status_change" value="now()"></column>
+        </insert>
+        <insert tableName="vacancies">
+            <column name="expected_salary" value="1813"></column>
+            <column name="company_name" value="BEMIQ"></column>
+            <column name="position" value="Antique dealer"></column>
+            <column name="vacancy_link" value="www.BEMIQ.com"></column>
+            <column name="recruiter_email" value="email2hr@mail.com"></column>
+            <column name="recruiter_phone" value="240-321-1110"></column>
+            <column name="status" value="GAVE_TEST"></column>
+            <column name="last_status_change" value="now()"></column>
+        </insert>
+        <insert tableName="vacancies">
+            <column name="expected_salary" value="746"></column>
+            <column name="company_name" value="ADFARMER"></column>
+            <column name="position" value="Garden designer"></column>
+            <column name="vacancy_link" value="www.ADFARMER.com"></column>
+            <column name="recruiter_email" value="email3hr@mail.com"></column>
+            <column name="recruiter_phone" value="435-962-7242"></column>
+            <column name="status" value="WAITING_FEEDBACK"></column>
+            <column name="last_status_change" value="now()"></column>
+        </insert>
+        <insert tableName="vacancies">
+            <column name="expected_salary" value="576"></column>
+            <column name="company_name" value="ENERXA"></column>
+            <column name="position" value="Canteen assistant"></column>
+            <column name="vacancy_link" value="www.ENERXA.com"></column>
+            <column name="recruiter_email" value="email4hr@mail.com"></column>
+            <column name="recruiter_phone" value="918-417-5809"></column>
+            <column name="status" value="SCREENING"></column>
+            <column name="last_status_change" value="now()"></column>
+        </insert>
+        <insert tableName="vacancies">
+            <column name="expected_salary" value="2859"></column>
+            <column name="company_name" value="NUMMIA"></column>
+            <column name="position" value="Magician"></column>
+            <column name="vacancy_link" value="www.NUMMIA.com"></column>
+            <column name="recruiter_email" value="email5hr@mail.com"></column>
+            <column name="recruiter_phone" value="913-451-8465"></column>
+            <column name="status" value="NO_ANSWER"></column>
+            <column name="last_status_change" value="now()"></column>
+        </insert>
+        <insert tableName="vacancies">
+            <column name="expected_salary" value="2167"></column>
+            <column name="company_name" value="fastan"></column>
+            <column name="position" value="Magician"></column>
+            <column name="vacancy_link" value="www.fastan.com"></column>
+            <column name="recruiter_email" value="email6hr@mail.com"></column>
+            <column name="recruiter_phone" value="610-562-1187"></column>
+            <column name="status" value="TECHNICAL_INTERVIEW"></column>
+            <column name="last_status_change" value="now()"></column>
+        </insert>
+        <insert tableName="vacancies">
+            <column name="expected_salary" value="1020"></column>
+            <column name="company_name" value="Vaprimza"></column>
+            <column name="position" value="Healthcare assistant"></column>
+            <column name="vacancy_link" value="www.Vaprimza.com"></column>
+            <column name="recruiter_email" value="email7hr@mail.com"></column>
+            <column name="recruiter_phone" value="860-706-2757"></column>
+            <column name="status" value="OFFER"></column>
+            <column name="last_status_change" value="now()"></column>
+        </insert>
+        <insert tableName="vacancies">
+            <column name="expected_salary" value="1795"></column>
+            <column name="company_name" value="gostrab"></column>
+            <column name="position" value="Home-worker"></column>
+            <column name="vacancy_link" value="www.gostrab.com"></column>
+            <column name="recruiter_email" value="email8hr@mail.com"></column>
+            <column name="recruiter_phone" value="774-994-6639"></column>
+            <column name="status" value="REFUSAL"></column>
+            <column name="last_status_change" value="now()"></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="3" author="dimakovalenko">
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="1"></column>
+            <column name="user_id" value="1"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="1"></column>
+            <column name="user_id" value="2"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="2"></column>
+            <column name="user_id" value="3"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="2"></column>
+            <column name="user_id" value="4"></column>
+        </insert>
+
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="3"></column>
+            <column name="user_id" value="1"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="3"></column>
+            <column name="user_id" value="2"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="4"></column>
+            <column name="user_id" value="3"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="4"></column>
+            <column name="user_id" value="4"></column>
+        </insert>
+
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="5"></column>
+            <column name="user_id" value="1"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="5"></column>
+            <column name="user_id" value="2"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="6"></column>
+            <column name="user_id" value="3"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="6"></column>
+            <column name="user_id" value="4"></column>
+        </insert>
+
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="7"></column>
+            <column name="user_id" value="1"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="7"></column>
+            <column name="user_id" value="2"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="8"></column>
+            <column name="user_id" value="3"></column>
+        </insert>
+        <insert tableName="vacancies_users">
+            <column name="vacancy_id" value="8"></column>
+            <column name="user_id" value="4"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
