@@ -2,6 +2,8 @@ package com.vacancydiary.service;
 
 import com.vacancydiary.entity.User;
 
+import java.util.List;
+
 public interface UserService {
 
     User save(User user);
@@ -13,5 +15,7 @@ public interface UserService {
     User update(User user, int id);
 
     User findByEmail(String email);
+
+    List<User> findAllByVacanciesWaitingFeedback();
 
 }
