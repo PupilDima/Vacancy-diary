@@ -7,7 +7,6 @@ import com.vacancydiary.entity.Vacancy;
 import com.vacancydiary.entity.VacancyStatus;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.PageRequest;
 
@@ -16,10 +15,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = NONE)
 class VacancyRepositoryTest {
 
     private final VacancyRepository vacancyRepository;
@@ -57,8 +54,8 @@ class VacancyRepositoryTest {
         User user = new User(1, "email@email", "password", Arrays.asList(vacancy1, vacancy2));
         userRepository.save(user);
 
-        vacancy1.setId(1);
-        vacancy2.setId(2);
+        vacancy1.setId(2);
+        vacancy2.setId(3);
         List<Vacancy> actual = vacancyRepository.findAllByUserId(1, PageRequest.of(0, 5));
 
         assertThat(actual.get(0)).isEqualTo(vacancy1);
