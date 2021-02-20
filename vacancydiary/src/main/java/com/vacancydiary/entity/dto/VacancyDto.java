@@ -13,6 +13,9 @@ public class VacancyDto {
     @ApiModelProperty("Vacancy id.")
     private Integer id;
 
+    @ApiModelProperty("Id of user applied for the vacancy.")
+    private Integer userId;
+
     @ApiModelProperty("Expected salary of user on the vacancy.")
     private Integer expectedSalary;
 
@@ -37,9 +40,11 @@ public class VacancyDto {
     public VacancyDto() {
     }
 
-    public VacancyDto(Integer id, Integer expectedSalary, String companyName, String position, String vacancyLink,
-                      RecruiterContactDto recruiterContact, VacancyStatus status, LocalDateTime lastStatusChange) {
+    public VacancyDto(Integer id, Integer userId, Integer expectedSalary, String companyName, String position,
+                      String vacancyLink, RecruiterContactDto recruiterContact, VacancyStatus status,
+                      LocalDateTime lastStatusChange) {
         this.id = id;
+        this.userId = userId;
         this.expectedSalary = expectedSalary;
         this.companyName = companyName;
         this.position = position;
@@ -55,6 +60,14 @@ public class VacancyDto {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getExpectedSalary() {
