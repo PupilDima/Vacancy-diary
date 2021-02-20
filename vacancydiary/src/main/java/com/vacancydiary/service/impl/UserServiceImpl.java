@@ -43,4 +43,9 @@ public class UserServiceImpl implements UserService {
     public User update(User user, int id) {
         return entityManager.merge(user);
     }
+
+    @Override
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 }
