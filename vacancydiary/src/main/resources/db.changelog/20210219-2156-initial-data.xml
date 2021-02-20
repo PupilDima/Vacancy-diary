@@ -27,6 +27,7 @@
     <changeSet id="2" author="dimakovalenko">
         <insert tableName="vacancies">
             <column name="expected_salary" value="1382"></column>
+            <column name="user_id" value="1"></column>
             <column name="company_name" value="solq"></column>
             <column name="position" value="Delivery driver"></column>
             <column name="vacancy_link" value="www.solq.com"></column>
@@ -37,6 +38,7 @@
         </insert>
         <insert tableName="vacancies">
             <column name="expected_salary" value="1813"></column>
+            <column name="user_id" value="2"></column>
             <column name="company_name" value="BEMIQ"></column>
             <column name="position" value="Antique dealer"></column>
             <column name="vacancy_link" value="www.BEMIQ.com"></column>
@@ -47,6 +49,7 @@
         </insert>
         <insert tableName="vacancies">
             <column name="expected_salary" value="746"></column>
+            <column name="user_id" value="3"></column>
             <column name="company_name" value="ADFARMER"></column>
             <column name="position" value="Garden designer"></column>
             <column name="vacancy_link" value="www.ADFARMER.com"></column>
@@ -57,6 +60,7 @@
         </insert>
         <insert tableName="vacancies">
             <column name="expected_salary" value="576"></column>
+            <column name="user_id" value="4"></column>
             <column name="company_name" value="ENERXA"></column>
             <column name="position" value="Canteen assistant"></column>
             <column name="vacancy_link" value="www.ENERXA.com"></column>
@@ -67,6 +71,7 @@
         </insert>
         <insert tableName="vacancies">
             <column name="expected_salary" value="2859"></column>
+            <column name="user_id" value="1"></column>
             <column name="company_name" value="NUMMIA"></column>
             <column name="position" value="Magician"></column>
             <column name="vacancy_link" value="www.NUMMIA.com"></column>
@@ -77,6 +82,7 @@
         </insert>
         <insert tableName="vacancies">
             <column name="expected_salary" value="2167"></column>
+            <column name="user_id" value="2"></column>
             <column name="company_name" value="fastan"></column>
             <column name="position" value="Magician"></column>
             <column name="vacancy_link" value="www.fastan.com"></column>
@@ -87,6 +93,7 @@
         </insert>
         <insert tableName="vacancies">
             <column name="expected_salary" value="1020"></column>
+            <column name="user_id" value="3"></column>
             <column name="company_name" value="Vaprimza"></column>
             <column name="position" value="Healthcare assistant"></column>
             <column name="vacancy_link" value="www.Vaprimza.com"></column>
@@ -97,6 +104,7 @@
         </insert>
         <insert tableName="vacancies">
             <column name="expected_salary" value="1795"></column>
+            <column name="user_id" value="4"></column>
             <column name="company_name" value="gostrab"></column>
             <column name="position" value="Home-worker"></column>
             <column name="vacancy_link" value="www.gostrab.com"></column>
@@ -107,73 +115,4 @@
         </insert>
     </changeSet>
 
-    <changeSet id="3" author="dimakovalenko">
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="1"></column>
-            <column name="user_id" value="1"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="1"></column>
-            <column name="user_id" value="2"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="2"></column>
-            <column name="user_id" value="3"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="2"></column>
-            <column name="user_id" value="4"></column>
-        </insert>
-
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="3"></column>
-            <column name="user_id" value="1"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="3"></column>
-            <column name="user_id" value="2"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="4"></column>
-            <column name="user_id" value="3"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="4"></column>
-            <column name="user_id" value="4"></column>
-        </insert>
-
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="5"></column>
-            <column name="user_id" value="1"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="5"></column>
-            <column name="user_id" value="2"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="6"></column>
-            <column name="user_id" value="3"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="6"></column>
-            <column name="user_id" value="4"></column>
-        </insert>
-
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="7"></column>
-            <column name="user_id" value="1"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="7"></column>
-            <column name="user_id" value="2"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="8"></column>
-            <column name="user_id" value="3"></column>
-        </insert>
-        <insert tableName="vacancies_users">
-            <column name="vacancy_id" value="8"></column>
-            <column name="user_id" value="4"></column>
-        </insert>
-    </changeSet>
 </databaseChangeLog>
