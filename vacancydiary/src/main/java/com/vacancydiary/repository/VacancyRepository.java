@@ -8,6 +8,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface VacancyRepository extends JpaRepository<Vacancy, Integer>,
@@ -17,5 +18,5 @@ public interface VacancyRepository extends JpaRepository<Vacancy, Integer>,
 
     List<Vacancy> findAllByStatus(VacancyStatus status);
 
-    Vacancy findByCompanyName(String companyName);
+    Optional<Vacancy> findByCompanyName(String companyName);
 }

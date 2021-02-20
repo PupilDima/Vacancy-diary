@@ -108,6 +108,6 @@ class VacancyRepositoryTest {
 
         vacancyRepository.save(expected);
 
-        assertThat(vacancyRepository.findByCompanyName(companyName)).isEqualTo(expected);
+        assertThat(vacancyRepository.findByCompanyName(companyName)).contains(expected);
     }
 }
