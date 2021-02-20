@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.PageRequest;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -34,34 +35,35 @@ class VacancyRepositoryTest {
     @Test
     void findAllByUsersIdShouldFindAllVacancyByUserId() {
         Vacancy vacancy1 = Vacancy.vacancyBuilder()
+                .setUserId(1)
                 .setCompanyName("company")
                 .setPosition("position")
                 .setExpectedSalary(1234)
                 .setVacancyLink("link.com")
                 .setStatus(VacancyStatus.GAVE_TEST)
                 .setRecruiterContact(new RecruiterContact("hremail", "777-777-777"))
-                .setLastStatusChange(LocalDateTime.now())
-                .setUsers(null)
+                .setLastStatusChange(LocalDateTime.parse("2021-01-21T12:30"))
                 .build();
         Vacancy vacancy2 = Vacancy.vacancyBuilder()
+                .setUserId(1)
                 .setCompanyName("company2")
                 .setPosition("position2")
                 .setExpectedSalary(1234)
                 .setVacancyLink("link2.com")
                 .setStatus(VacancyStatus.OFFER)
                 .setRecruiterContact(new RecruiterContact("hremail2", "777-777-777"))
-                .setLastStatusChange(LocalDateTime.now())
-                .setUsers(null)
+                .setLastStatusChange(LocalDateTime.parse("2021-01-21T12:30"))
                 .build();
 
-        vacancyRepository.save(vacancy1);
-        vacancyRepository.save(vacancy2);
+        User user = new User(1, "email@email", "password", Arrays.asList(vacancy1, vacancy2));
+        userRepository.save(user);
 
-        User user1 = new User(1, "email", "password", Arrays.asList(vacancy1, vacancy2));
-        userRepository.save(user1);
-
+        vacancy1.setId(1);
+        vacancy2.setId(2);
         List<Vacancy> expected = Arrays.asList(vacancy1, vacancy2);
-        assertThat(vacancyRepository.findAllByUsersId(1, PageRequest.of(0, 5))).isEqualTo(expected);
+        List<Vacancy> actual = vacancyRepository.findAllByUserId(1, PageRequest.of(0, 5));
+
+        assertThat(actual).containsAll(expected);
     }
 
     @Test
@@ -74,7 +76,6 @@ class VacancyRepositoryTest {
                 .setStatus(VacancyStatus.OFFER)
                 .setRecruiterContact(new RecruiterContact("hremail", "777-777-777"))
                 .setLastStatusChange(LocalDateTime.now())
-                .setUsers(null)
                 .build();
         Vacancy vacancy2 = Vacancy.vacancyBuilder()
                 .setCompanyName("company2")
@@ -84,7 +85,6 @@ class VacancyRepositoryTest {
                 .setStatus(VacancyStatus.OFFER)
                 .setRecruiterContact(new RecruiterContact("hremail2", "777-777-777"))
                 .setLastStatusChange(LocalDateTime.now())
-                .setUsers(null)
                 .build();
 
         vacancyRepository.save(vacancy1);
@@ -105,7 +105,6 @@ class VacancyRepositoryTest {
                 .setStatus(VacancyStatus.OFFER)
                 .setRecruiterContact(new RecruiterContact("hremail", "777-777-777"))
                 .setLastStatusChange(LocalDateTime.now())
-                .setUsers(null)
                 .build();
 
         vacancyRepository.save(expected);

@@ -13,7 +13,7 @@ import java.util.List;
 public interface VacancyRepository extends JpaRepository<Vacancy, Integer>,
         PagingAndSortingRepository<Vacancy, Integer> {
 
-    List<Vacancy> findAllByUsersId(Integer userId, Pageable pageable);
+    List<Vacancy> findAllByUserId(Integer userId, Pageable pageable);
 
     List<Vacancy> findAllByStatus(VacancyStatus status);
 
