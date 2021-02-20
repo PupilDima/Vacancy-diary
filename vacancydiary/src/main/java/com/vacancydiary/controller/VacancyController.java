@@ -1,6 +1,5 @@
 package com.vacancydiary.controller;
 
-import com.vacancydiary.entity.Vacancy;
 import com.vacancydiary.entity.VacancyStatus;
 import com.vacancydiary.entity.dto.VacancyDto;
 import com.vacancydiary.mapper.VacancyMapper;
@@ -35,8 +34,8 @@ public class VacancyController {
     }
 
     @PutMapping("/vacancy/{id}")
-    public VacancyDto update(@RequestBody Vacancy vacancy) {
-        return vacancyMapper.map(vacancyService.update(vacancy));
+    public VacancyDto update(@RequestBody VacancyDto vacancy) {
+        return vacancyMapper.map(vacancyService.update(vacancyMapper.map(vacancy)));
     }
 
     @GetMapping("/vacancies/status/{status}")

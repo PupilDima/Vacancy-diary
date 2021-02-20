@@ -1,8 +1,6 @@
 package com.vacancydiary.service.impl;
 
-import com.vacancydiary.entity.User;
 import com.vacancydiary.entity.Vacancy;
-import com.vacancydiary.repository.UserRepository;
 import com.vacancydiary.repository.VacancyRepository;
 import com.vacancydiary.service.VacancyService;
 import org.junit.jupiter.api.Test;
