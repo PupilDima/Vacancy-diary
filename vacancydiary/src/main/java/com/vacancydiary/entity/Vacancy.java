@@ -1,5 +1,6 @@
 package com.vacancydiary.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -45,7 +46,7 @@ public class Vacancy {
     @Column(name = "last_status_change")
     private LocalDateTime lastStatusChange;
 
-    @ManyToMany(mappedBy = "vacancies")
+    @ManyToMany(mappedBy = "vacancies", cascade = {CascadeType.MERGE})
     List<User> users;
 
     protected Vacancy() {
@@ -127,6 +128,14 @@ public class Vacancy {
 
     public void setLastStatusChange(LocalDateTime lastStatusChange) {
         this.lastStatusChange = lastStatusChange;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     public static VacancyBuilder vacancyBuilder() {
@@ -226,13 +235,14 @@ public class Vacancy {
     public String toString() {
         return "Vacancy{" +
                 "id=" + id +
+                ", expectedSalary=" + expectedSalary +
                 ", companyName='" + companyName + '\'' +
                 ", position='" + position + '\'' +
-                ", expectedSalary=" + expectedSalary +
                 ", vacancyLink='" + vacancyLink + '\'' +
                 ", recruiterContact=" + recruiterContact +
                 ", status=" + status +
                 ", lastStatusChange=" + lastStatusChange +
+                ", users=" + users +
                 '}';
     }
 }
