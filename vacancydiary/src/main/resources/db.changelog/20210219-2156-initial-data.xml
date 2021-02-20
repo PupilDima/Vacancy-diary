@@ -15,7 +15,7 @@
            <column name="password" value="$2a$12$3EaTBOFTAmQZcrOGeh88yeaHnidfK0U/pVAljGWvUfSI4/D17Ae56"></column>
        </insert>
        <insert tableName="users">
-           <column name="email" value="email3@mail.com"></column>
+           <column name="email" value="qwerthink@ukr.net"></column>
            <column name="password" value="$2a$12$3vFG8SkVJkjJGp7U4Dlu/.yOB9ElfCFYkgeNJzFo97.ibyeN4D.qK"></column>
        </insert>
        <insert tableName="users">
@@ -53,10 +53,10 @@
             <column name="company_name" value="ADFARMER"></column>
             <column name="position" value="Garden designer"></column>
             <column name="vacancy_link" value="www.ADFARMER.com"></column>
-            <column name="recruiter_email" value="email3hr@mail.com"></column>
+            <column name="recruiter_email" value="reqdeew@ukr.net"></column>
             <column name="recruiter_phone" value="435-962-7242"></column>
             <column name="status" value="WAITING_FEEDBACK"></column>
-            <column name="last_status_change" value="now()"></column>
+            <column name="last_status_change" value="2021-02-10 22:36:49"></column>
         </insert>
         <insert tableName="vacancies">
             <column name="expected_salary" value="576"></column>
