@@ -12,7 +12,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.PageRequest;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -60,10 +59,10 @@ class VacancyRepositoryTest {
 
         vacancy1.setId(1);
         vacancy2.setId(2);
-        List<Vacancy> expected = Arrays.asList(vacancy1, vacancy2);
         List<Vacancy> actual = vacancyRepository.findAllByUserId(1, PageRequest.of(0, 5));
 
-        assertThat(actual).containsAll(expected);
+        assertThat(actual.get(0)).isEqualTo(vacancy1);
+        assertThat(actual.get(1)).isEqualTo(vacancy2);
     }
 
     @Test
